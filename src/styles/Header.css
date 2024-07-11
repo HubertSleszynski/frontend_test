@@ -22,20 +22,21 @@
 .main-header__logo-link:hover {
   background-color: #e88301;
 }
+.main-header__logo-link:hover .main-header__icon {
+  width: 3rem;
+  height: 3rem;
+}
 .main-header__logo-link .main-header__icon {
   width: 2.5rem;
   height: 2.5rem;
   color: #ffffff;
 }
-.main-header__logo-link .main-header__icon:hover {
-  width: 3rem;
-  height: 3rem;
-}
 .main-header__details {
   text-align: right;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
 }
 .main-header__details .main-header__title {
   font-size: 1rem;
@@ -44,6 +45,12 @@
 }
 .main-header__details .main-header__title-highlight {
   font-weight: 700;
+}
+.main-header__details .main-header__name {
+  font-size: 1rem;
+  font-weight: 400;
+  width: 100%;
+  margin-right: 2.5rem;
 }
 @media screen and (min-width: 90rem) {
   .main-header {

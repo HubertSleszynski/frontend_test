@@ -1,0 +1,179 @@
+@import "variables";
+
+.footer {
+  background-color: $bg-footer-color;
+  color: $secondary-color;
+  padding: 1.25rem;
+  height: 8.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 0;
+
+  &__btn {
+    background-color: $bg-footer-color;
+    border: 1px solid $footer-color;
+    border-radius: 0.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.875rem;
+    width: 17rem;
+    color: $secondary-color;
+    padding: 1rem;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &container {
+      position: relative;
+
+      &:hover {
+        .footer__btn {
+          color: $primary-color;
+          border-color: $primary-color;
+        }
+
+        .footer__icon {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+
+  &__icon {
+    transition: transform 0.3s ease;
+  }
+
+  &__toggle {
+    display: none;
+
+    &:checked ~ .footer__btn {
+      color: $primary-color;
+      border-color: $primary-color;
+
+      .footer__icon {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__frame {
+    width: 17rem;
+    transition: all 0.5s ease-in-out;
+    transform: translateY(0);
+    opacity: 0;
+    background-color: $primary-color;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    padding: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.75rem;
+    flex-direction: column;
+    border-radius: 0.25rem;
+    cursor: default;
+    z-index: -1;
+    box-shadow: 0 0 1rem $black;
+  }
+
+  &__toggle:checked + .footer__btn + .footer__frame {
+    transform: translate(-50%, -205%);
+    opacity: 1;
+  }
+}
+
+.frame {
+  &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    border: none;
+    background-color: transparent;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $logo-color-hover;
+    }
+  }
+
+  &__icon {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+.css {
+  &__container {
+    width: 6rem;
+    height: 6rem;
+    border: 1px solid $footer-color;
+    padding: 0.5rem 0.75rem;
+    transition: all 1s ease-in-out;
+    cursor: pointer;
+    color: $footer-color;
+
+    &:hover {
+      transform: rotate(360deg);
+      border-color: $logo-color-hover;
+
+      .css__textcontainer {
+        transform: rotate(-360deg);
+        color: $secondary-color;
+      }
+    }
+  }
+
+  &__text {
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    font-weight: 400;
+    display: block;
+
+    &container {
+      transition: all 1s ease-in-out;
+    }
+  }
+}
+
+.company {
+  &__container {
+    display: none;
+  }
+
+  @media screen and (min-width: 60rem) {
+    &__container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.75rem;
+      color: $footer-color;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &__divider {
+      width: 3.5rem;
+      height: 1px;
+      background-color: $footer-color;
+    }
+
+    &__text {
+      font-size: 1.5rem;
+      font-weight: 400;
+    }
+  }
+}
