@@ -1,7 +1,7 @@
 import "../styles/Footer.scss";
 import { IoIosArrowUp, IoIosArrowForward } from "react-icons/io";
 
-const Footer = ({ isDataAcive, setIsDataAcive }) => {
+const Footer = ({ isDataAcive, setIsDataAcive, resetSettings }) => {
   return (
     <footer className="footer">
       <div className="css__container">
@@ -22,7 +22,7 @@ const Footer = ({ isDataAcive, setIsDataAcive }) => {
           Pokaż <IoIosArrowUp className="footer__icon" />
         </label>
         <div className="footer__frame">
-          <button className="frame__btn">
+          <button className="frame__btn" onClick={resetSettings}>
             <IoIosArrowForward className="frame__icon" /> Zresetuj ustawienia
           </button>
           {!isDataAcive && (
